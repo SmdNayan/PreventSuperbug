@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/medicine_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pills"
+                android:layout_gravity="center_vertical"
+                android:padding="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:id="@+id/medicine_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine Name"
+                android:layout_toEndOf="@id/medicine_iv"
+                android:layout_toRightOf="@id/medicine_iv"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans_regular"/>
+
+            <TextView
+                android:id="@+id/group_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine Group Name"
+                android:layout_toEndOf="@id/medicine_iv"
+                android:layout_below="@id/medicine_name_tv"
+                android:layout_toRightOf="@id/medicine_iv"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans_regular"/>
+
+            <TextView
+                android:id="@+id/company_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medicine Company Name"
+                android:layout_toEndOf="@id/group_name_tv"
+                android:layout_below="@id/medicine_name_tv"
+                android:layout_toRightOf="@id/group_name_tv"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans_regular"/>
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
