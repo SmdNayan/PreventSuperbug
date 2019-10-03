@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DoctorArticleList">
+    tools:context=".DoctorArticleListActivity">
 
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar_v"/>

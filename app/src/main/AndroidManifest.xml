@@ -12,16 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ArticleDetails"></activity>
-        <activity android:name=".AntibioticDetails" />
-        <activity android:name=".DoctorArticleList" />
-        <activity android:name=".About" />
-        <activity android:name=".Superbug" />
-        <activity android:name=".Mentorship" />
-        <activity android:name=".Article" />
-        <activity android:name=".Complain" />
-        <activity android:name=".Antibiotic" />
-        <activity android:name=".Dashboard">
+        <activity android:name=".ArticleDetailsActivity"></activity>
+        <activity android:name=".AntibioticDetailsActivity" />
+        <activity android:name=".DoctorArticleListActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".SuperbugActivity" />
+        <activity android:name=".MentorshipActivity" />
+        <activity android:name=".ArticleActivity" />
+        <activity android:name=".ComplainActivity" />
+        <activity android:name=".AntibioticActivity" />
+        <activity android:name=".DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

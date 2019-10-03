@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#000000"
+        android:textColor="#fff"
         android:fontFamily="@font/opensans_bold"
         />
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
+    android:paddingTop="20dp"
+    tools:context=".DashboardActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="?attr/actionBarSize">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -23,81 +25,81 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/complain_cv"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="6dp"
-                    style="@style/Widget.MaterialComponents.CardView">
+                    android:layout_weight=".1"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="2dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_doctor2"
-                            android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_doctor2" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Complain"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="Complain"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/antibiotic_cv"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp">
+                    android:layout_weight=".1"
+                    app:cardElevation="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_pills"
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_pills" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Antibiotic"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="Antibiotic"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
             </LinearLayout>
 
             <LinearLayout
@@ -108,37 +110,38 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/article_cv"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp">
+                    android:layout_weight="1"
+                    app:cardElevation="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_article"
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_article" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Article"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="Article"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
@@ -146,41 +149,41 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/mentorship_cv"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp">
+                    android:layout_weight="1"
+                    app:cardElevation="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_bacteria3"
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_bacteria3" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Mentorship"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="Mentorship"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
             </LinearLayout>
 
             <LinearLayout
@@ -191,37 +194,38 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/superbug_cv"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp">
+                    android:layout_weight="1"
+                    app:cardElevation="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_bacteria2"
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_bacteria2" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Superbug"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="Superbug"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
@@ -229,57 +233,51 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/about_cv"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="200dp">
+                    android:layout_weight="1"
+                    app:cardElevation="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/ic_about"
                             android:layout_gravity="center"
                             android:scaleType="fitXY"
-                            android:layout_marginBottom="12dp"
-                            />
+                            android:scaleX=".75"
+                            android:scaleY=".75"
+                            android:src="@drawable/ic_about" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="About"
-                            android:textAllCaps="true"
-                            android:textStyle="bold"
-                            android:textColor="#000"
-                            android:textSize="18sp"
+                            android:layout_marginTop="4dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
-                            android:layout_marginTop="4dp"
-                            />
+                            android:padding="5dp"
+                            android:text="About"
+                            android:textAllCaps="true"
+                            android:textColor="#000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
             </LinearLayout>
-
         </LinearLayout>
-
-
-
     </ScrollView>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LogIn / SignUp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        style="@style/Widget.MaterialComponents.Button"
-        />
-
-
+        android:background="@color/colorPrimaryDark"
+        app:itemIconTint="@color/md_grey_500"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/home_bottom_menu" />
 </RelativeLayout>
