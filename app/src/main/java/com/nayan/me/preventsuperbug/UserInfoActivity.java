@@ -7,19 +7,19 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
-public class ArticleActivity extends AppCompatActivity {
+public class UserInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_article);
+        setContentView(R.layout.activity_user_info);
 
         actionbarSetting();
     }
 
     private void actionbarSetting() {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setTitle("ARTICLE");
+        getSupportActionBar().setTitle("USER INFO");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -33,5 +33,4 @@ public class ArticleActivity extends AppCompatActivity {
         }
         return true;
     }
-
 }

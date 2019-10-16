@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ArticleDetailsActivity"></activity>
+        <activity android:name=".UserInfoActivity"></activity>
+        <activity android:name=".DoctorVerificationActivity" />
+        <activity android:name=".ArticleDetailsActivity" />
         <activity android:name=".AntibioticDetailsActivity" />
         <activity android:name=".DoctorArticleListActivity" />
         <activity android:name=".AboutActivity" />

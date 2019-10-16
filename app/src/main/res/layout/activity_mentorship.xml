@@ -7,7 +7,17 @@
     android:orientation="vertical"
     tools:context=".MentorshipActivity">
 
-    <include layout="@layout/toolbar" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="@dimen/status_bar_height"
+        android:theme="@style/AppTheme.ToolbarDark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Complain"
+        app:titleTextColor="@color/white" />
 
     <GridView
         android:layout_width="match_parent"

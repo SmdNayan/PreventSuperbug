@@ -2,49 +2,56 @@ package com.nayan.me.preventsuperbug;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 
-import com.nayan.me.preventsuperbug.adapter.MedicineAdapter;
+import com.google.android.material.button.MaterialButton;
 
-public class AntibioticActivity extends AppCompatActivity {
-    private RecyclerView rcvMedicine;
+public class DoctorVerificationActivity extends AppCompatActivity {
+
+    MaterialButton cancelBtn;
+    MaterialButton submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_antibiotic);
-        init();
-        bindViews();
+        setContentView(R.layout.activity_doctor_verification);
         actionbarSetting();
+        init();
+        onButtonClick();
     }
 
-    private void init() {
-        rcvMedicine = findViewById(R.id.rcvMedicine);
+    private void init(){
+        cancelBtn = findViewById(R.id.cancel_button);
+        submitBtn = findViewById(R.id.submit_button);
     }
 
-    private void bindViews() {
-        MedicineAdapter adapter = new MedicineAdapter();
-        rcvMedicine.setAdapter(adapter);
-        rcvMedicine.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        rcvMedicine.setItemAnimator(new DefaultItemAnimator());
-        rcvMedicine.setHasFixedSize(true);
+    private void onButtonClick(){
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void actionbarSetting() {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setTitle("Doctor Verification");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
     }
 
     @Override

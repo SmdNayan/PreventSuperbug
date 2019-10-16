@@ -7,14 +7,21 @@
     android:orientation="vertical"
     tools:context=".DoctorArticleListActivity">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar_v"/>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="@dimen/status_bar_height"
+        android:theme="@style/AppTheme.ToolbarDark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
-        android:layout_below="@id/toolbar_v">
+        android:layout_below="@id/toolbar">
 
 
     </androidx.recyclerview.widget.RecyclerView>
