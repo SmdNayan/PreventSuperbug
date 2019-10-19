@@ -1,43 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:cardElevation="6dp"
-        app:cardCornerRadius="6dp">
+        android:id="@+id/article_cv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        app:cardElevation="2dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <ImageView
                 android:id="@+id/doctor_iv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_bacteria3"
-                android:layout_marginTop="20dp"
-                />
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:scaleX=".75"
+                android:scaleY=".75"
+                android:src="@drawable/ic_article" />
 
             <TextView
-                android:id="@+id/medicine_name_tv"
+                android:id="@+id/dctr_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/opensans_bold"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Article"
+                android:textAllCaps="true"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/specialist_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Doctor Name"
-                android:layout_below="@id/doctor_iv"
+                android:text="Hospital Name"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
+                android:gravity="center_horizontal"
                 android:textColor="#000000"
+                android:layout_gravity="center"
                 android:fontFamily="@font/opensans_regular"
-                android:layout_centerHorizontal="true"/>
-
-        </RelativeLayout>
+                />
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <!--<com.google.android.material.card.MaterialCardView-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--app:cardElevation="6dp"-->
+        <!--app:cardCornerRadius="6dp">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/doctor_iv"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_bacteria3"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/dctr_name_tv"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Doctor Name"-->
+                <!--android:layout_below="@id/doctor_iv"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:textColor="#000000"-->
+                <!--android:fontFamily="@font/opensans_regular"-->
+                <!--android:layout_centerHorizontal="true"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/specialist_name"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Hospital Name"-->
+                <!--android:layout_below="@id/doctor_iv"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:textColor="#000000"-->
+                <!--android:fontFamily="@font/opensans_regular"-->
+                <!--android:layout_centerHorizontal="true"/>-->
+
+        <!--</RelativeLayout>-->
+
+    <!--</com.google.android.material.card.MaterialCardView>-->
 
 </LinearLayout>

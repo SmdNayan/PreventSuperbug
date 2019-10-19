@@ -20,6 +20,7 @@
         app:titleTextColor="@color/white" />
 
     <GridView
+        android:id="@+id/dctr_gv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
