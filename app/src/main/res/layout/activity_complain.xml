@@ -53,6 +53,7 @@
                     app:hintEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/providerName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -71,6 +72,7 @@
                     app:hintEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/farmacyName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -89,6 +91,7 @@
                     app:hintEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -107,16 +110,18 @@
                     app:hintEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/details"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="top|left"
                         android:inputType="textMultiLine"
                         android:lines="3"
-                        android:gravity="top|left"
                         android:textSize="12sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/isPrescribed"
                     style="@style/Widget.MaterialComponents.CompoundButton.CheckBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,6 +150,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
+                        android:onClick="selectImage"
+                        android:id="@+id/upload"
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/ic_bacteria2" />
 
@@ -211,6 +218,7 @@
             android:textSize="14sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

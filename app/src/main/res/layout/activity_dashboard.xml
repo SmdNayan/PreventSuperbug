@@ -365,5 +365,6 @@
         android:background="@color/colorPrimaryDark"
         app:itemIconTint="@color/md_grey_500"
         app:itemTextColor="@color/white"
+        android:id="@+id/btmMenu"
         app:menu="@menu/home_bottom_menu" />
 </RelativeLayout>

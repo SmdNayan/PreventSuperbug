@@ -8,4 +8,9 @@
         android:id="@+id/mnSignup"
         android:icon="@drawable/ic_signup"
         android:title="Signup" />
+    <item
+        android:id="@+id/mnLogout"
+        android:visible="false"
+        android:icon="@drawable/ic_signup"
+        android:title="Logout" />
 </menu>
