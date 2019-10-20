@@ -23,6 +23,19 @@ public class User {
     @Expose(serialize = false)
     private String password;
 
+    @SerializedName("hospital")
+    @Expose
+    private String hospital;
+
+    @SerializedName("speciality")
+    @Expose(serialize = false)
+    private String speciality;
+
+    @SerializedName("qualification")
+    @Expose
+    private String qualification;
+
+
     @SerializedName("active")
     @Expose
     private int active;
@@ -103,5 +116,10 @@ public class User {
             sb.append("Password is required!\t");
         }
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "--------------------\n" + fullName + "\n" + hospital + "\n" + speciality + "\n" + qualification;
     }
 }
