@@ -28,6 +28,7 @@ public class DoctorVerificationActivity extends AppCompatActivity {
     EditText speciality;
     EditText hospital;
     EditText qualification;
+    EditText regNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class DoctorVerificationActivity extends AppCompatActivity {
         speciality = findViewById(R.id.speciality);
         hospital = findViewById(R.id.hospital);
         qualification = findViewById(R.id.qualification);
+        regNo = findViewById(R.id.regNo);
     }
 
     private void onButtonClick() {
@@ -68,6 +70,7 @@ public class DoctorVerificationActivity extends AppCompatActivity {
         doctorSearch.setHospital(hospital.getText().toString());
         doctorSearch.setQualification(qualification.getText().toString());
         doctorSearch.setSpeciality(speciality.getText().toString());
+        doctorSearch.setRegNo(regNo.getText().toString());
         if (doctorSearch.getNullFieldName().isEmpty()) {
             doSearch(doctorSearch);
         } else {

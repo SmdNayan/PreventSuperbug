@@ -18,6 +18,10 @@ public class DoctorSearch {
     @Expose
     private String qualification;
 
+    @SerializedName("regNo")
+    @Expose
+    private String regNo;
+
     @SerializedName("hospital")
     @Expose
     private String hospital;
@@ -56,6 +60,9 @@ public class DoctorSearch {
 
     public String getNullFieldName() {
         StringBuilder sb = new StringBuilder();
+        if (regNo != null || !regNo.isEmpty()) {
+            return sb.toString();
+        }
         if (getName() != null && getName().isEmpty()) {
             sb.append("Name is Required!\t");
         }
@@ -70,5 +77,13 @@ public class DoctorSearch {
         }
         return sb.toString();
 
+    }
+
+    public String getRegNo() {
+        return regNo;
+    }
+
+    public void setRegNo(String regNo) {
+        this.regNo = regNo;
     }
 }
