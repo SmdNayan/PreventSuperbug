@@ -28,6 +28,15 @@ public class Medicine {
     @Expose
     private int companyId;
 
+    @SerializedName("dosageForm")
+    @Expose
+    private String dosageForm;
+
+    @SerializedName("strength")
+    @Expose
+    private String strength;
+
+
     @SerializedName("manufactureDate")
     @Expose
     private Date manufactureDate;
@@ -39,6 +48,10 @@ public class Medicine {
     @SerializedName("group")
     @Expose
     private MedicineGroup medicineGroup;
+
+    @SerializedName("medicineCompany")
+    @Expose
+    private MedicineCompany medicineCompany;
 
     @SerializedName("medicineImages")
     @Expose
@@ -120,4 +133,27 @@ public class Medicine {
         return sb.toString();
     }
 
+    public MedicineGroup getMedicineGroup() {
+        return medicineGroup;
+    }
+
+    public MedicineCompany getMedicineCompany() {
+        return medicineCompany;
+    }
+
+    public String getDosageForm() {
+        return dosageForm;
+    }
+
+    public void setDosageForm(String dosageForm) {
+        this.dosageForm = dosageForm;
+    }
+
+    public String getStrength() {
+        return strength;
+    }
+
+    public void setStrength(String strength) {
+        this.strength = strength;
+    }
 }
