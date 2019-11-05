@@ -45,31 +45,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:text="Group: " />
 
         <TextView
             android:id="@+id/manufacturer_name_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"  />
+            android:padding="5dp"
+            android:text="Company: " />
 
         <TextView
             android:id="@+id/dose_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"  />
+            android:padding="5dp"
+            android:text="Dose: " />
 
         <TextView
             android:id="@+id/strength_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:text="Strength: " />
 
         <TextView
             android:id="@+id/details_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"  />
+            android:padding="5dp"
+            android:text="Details: " />
     </LinearLayout>
 
 

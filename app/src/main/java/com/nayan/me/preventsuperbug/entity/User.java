@@ -28,13 +28,14 @@ public class User {
     private String hospital;
 
     @SerializedName("speciality")
-    @Expose(serialize = false)
+    @Expose()
     private String speciality;
 
     @SerializedName("qualification")
     @Expose
     private String qualification;
-   @SerializedName("reg_no")
+
+    @SerializedName("registrationNumber")
     @Expose
     private String registrationNumber;
 

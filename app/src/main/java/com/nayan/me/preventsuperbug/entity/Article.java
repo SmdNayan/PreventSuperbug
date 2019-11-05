@@ -27,10 +27,6 @@ public class Article {
     @Expose
     private int userId;
 
-    @SerializedName("createAt")
-    @Expose
-    private Date createAt;
-
     @SerializedName("active")
     @Expose
     private int active;
@@ -42,6 +38,10 @@ public class Article {
     @SerializedName("thumbImageTitle")
     @Expose
     private String thumbImageTitle;
+
+    @SerializedName("user")
+    @Expose
+    private User user;
 
     public int getArticleId() {
         return articleId;
@@ -83,14 +83,6 @@ public class Article {
         this.userId = userId;
     }
 
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
-
     public int getActive() {
         return active;
     }
@@ -113,5 +105,13 @@ public class Article {
 
     public void setThumbImageTitle(String thumbImageTitle) {
         this.thumbImageTitle = thumbImageTitle;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

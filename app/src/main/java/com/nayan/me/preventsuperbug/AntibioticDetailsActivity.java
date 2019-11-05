@@ -42,11 +42,11 @@ public class AntibioticDetailsActivity extends AppCompatActivity {
     private void bindData() {
         medicineNameTv.setText(medicine.getName());
         if (medicine.getMedicineGroup() != null)
-            groupNameTv.setText(medicine.getMedicineGroup().getGroupName());
+            groupNameTv.append(medicine.getMedicineGroup().getGroupName());
         if (medicine.getMedicineCompany() != null)
-            manufacturerNameTv.setText(medicine.getMedicineCompany().getName());
-        doseTv.setText(medicine.getDosageForm());
-        strengthTv.setText(medicine.getStrength());
+            manufacturerNameTv.append(medicine.getMedicineCompany().getName());
+        doseTv.append(medicine.getDosageForm());
+        strengthTv.append(medicine.getStrength());
 
     }
 
