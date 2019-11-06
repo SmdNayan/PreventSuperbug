@@ -97,7 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                     dialog.setCancelable(false);
                     dialog.setProgressStyle(android.R.attr.progressBarStyleLarge);
                     // dialog.setIndeterminateDrawable(BaseActivity.this.getResources().getDrawable(R.drawable.dialog_cirlce));
-
                 }
                 if (visibility) {
 //                dialog.setTitle(title == null ? getString(R.string.jatri_sheba) : title);
