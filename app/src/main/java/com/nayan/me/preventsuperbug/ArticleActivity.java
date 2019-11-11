@@ -7,14 +7,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.nayan.me.preventsuperbug.adapter.ArticleAdapter;
 import com.nayan.me.preventsuperbug.adapter.MedicineAdapter;
 import com.nayan.me.preventsuperbug.core.Config;
+import com.nayan.me.preventsuperbug.core.PBSBApplication;
 import com.nayan.me.preventsuperbug.entity.Article;
 import com.nayan.me.preventsuperbug.entity.Medicine;
 import com.nayan.me.preventsuperbug.network.repos.implementes.HttpRepository;
@@ -28,6 +33,9 @@ import retrofit2.HttpException;
 
 public class ArticleActivity extends AppCompatActivity {
     private RecyclerView rcvArticle;
+    private MaterialButton addArticle;
+    private TextView tvArticle;
+    private TextView tvAllArticle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +79,52 @@ public class ArticleActivity extends AppCompatActivity {
 
     private void init() {
         rcvArticle = findViewById(R.id.rcvArticle);
+        addArticle = findViewById(R.id.addArticle);
+        tvArticle = findViewById(R.id.tvArticle);
+        tvAllArticle = findViewById(R.id.tvAllArticle);
+        addArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PBSBApplication.isLoggedIn())
+                    startActivity(new Intent(ArticleActivity.this, AddArticleActivity.class));
+            }
+        });
+        tvArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PBSBApplication.isLoggedIn()) {
+                    loadMyArticles(PBSBApplication.getUser().getUserId());
+                }
+            }
+        });
+        tvAllArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getArticles();
+            }
+        });
+    }
+
+    private void loadMyArticles(int userId) {
+        loadingProgressDialog(true, "Article", "Loading...");
+        HttpRepository getMedicines = new HttpRepository(Config.BASE_URL);
+        getMedicines.get("api/v1/articles-by-user/" + userId, Article[].class, new Consumer<Article[]>() {
+            @Override
+            public void accept(Article[] articles) throws Exception {
+                if (articles != null)
+                    bindData(Arrays.asList(articles));
+                loadingProgressDialog(false, "Article", "Loading your articles...");
+            }
+        }, new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+                HttpException exception = (HttpException) throwable;
+                if (exception.code() == 403) {
+                    Toast.makeText(getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
+                }
+                loadingProgressDialog(false, "Article", "Loading...");
+            }
+        });
     }
 
     private void actionbarSetting() {

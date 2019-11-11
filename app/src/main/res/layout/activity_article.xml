@@ -17,21 +17,60 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextColor="@color/white" />
 
-    <SearchView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:orientation="horizontal">
 
-    </SearchView>
+        <TextView
+            android:id="@+id/tvAllArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_list_black_24dp"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="All Article"
+            android:textColor="@color/md_green_500"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_list_black_24dp"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="My Article"
+            android:textColor="@color/md_amber_900"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvArticle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp">
-
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1">
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="10dp"
+            android:text="Add New Article" />
+    </LinearLayout>
 
 </LinearLayout>

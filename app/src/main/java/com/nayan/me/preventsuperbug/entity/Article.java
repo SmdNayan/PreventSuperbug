@@ -114,4 +114,20 @@ public class Article {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public String requiredFields() {
+        StringBuilder sb = new StringBuilder();
+        if (getArticleTitle().isEmpty()) {
+            sb.append("Article Title is Required!\t");
+        }
+        if (getShortDesc().isEmpty()) {
+            sb.append("Short description is required!\t");
+        }
+        if (getLongDesc().isEmpty()) {
+            sb.append("Long Description is required!\t");
+        }
+
+        return sb.toString();
+    }
+
 }
