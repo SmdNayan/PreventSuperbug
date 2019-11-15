@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class SuperbugActivity extends AppCompatActivity {
 
@@ -13,8 +15,14 @@ public class SuperbugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_superbug);
-
         actionbarSetting();
+        loadSuperbugWebView();
+    }
+
+    private void loadSuperbugWebView() {
+        WebView webView = findViewById(R.id.webView);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("file:///android_asset/superbug.html");
     }
 
     private void actionbarSetting() {

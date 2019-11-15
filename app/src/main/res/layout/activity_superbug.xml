@@ -19,38 +19,19 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:text="News"
-        android:textSize="18sp"
-        android:textColor="#000"
-        android:textAllCaps="true"
-        android:fontFamily="@font/opensans_bold"
-        android:layout_margin="8dp"/>
-    
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="8dp">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Doctor Advice"
-        android:textSize="18sp"
-        android:textColor="#000"
-        android:textAllCaps="true"
+        android:layout_margin="8dp"
         android:fontFamily="@font/opensans_bold"
-        android:layout_margin="8dp"/>
+        android:text="Superbug"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="18sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp">
+        android:layout_height="wrap_content" />
 
 
-    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

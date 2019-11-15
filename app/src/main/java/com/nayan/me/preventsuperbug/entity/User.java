@@ -39,6 +39,37 @@ public class User {
     @Expose
     private String registrationNumber;
 
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
 
     @SerializedName("active")
     @Expose
@@ -122,8 +153,37 @@ public class User {
         return sb.toString();
     }
 
+    @SerializedName("roleId")
+    @Expose
+    private int roleId;
+
     @Override
     public String toString() {
         return "--------------------\n" + fullName + "\n" + hospital + "\n" + speciality + "\n" + qualification;
+    }
+
+    public String doctorRequiredFields() {
+        StringBuilder sb = new StringBuilder();
+        if (getHospital().isEmpty()) {
+            sb.append("Hospital Name is Required!\t");
+        }
+        if (getRegistrationNumber().isEmpty()) {
+            sb.append("Reg. No.  is required!\t");
+        }
+        if (getQualification().isEmpty()) {
+            sb.append("Qualification is required!\t");
+        }
+        if (getSpeciality().isEmpty()) {
+            sb.append("Speciality is required!\t");
+        }
+        return sb.toString();
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 }

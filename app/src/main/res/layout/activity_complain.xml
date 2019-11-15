@@ -142,17 +142,17 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/opensans_regular"
-                        android:text="Please Upload a image of your Prescription"
+                        android:text="Prescription Image"
                         android:textColor="#000000" />
 
                     <ImageButton
+                        android:id="@+id/upload"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
-                        android:onClick="selectImage"
-                        android:id="@+id/upload"
                         android:layout_marginBottom="8dp"
+                        android:onClick="selectImage"
                         android:src="@drawable/ic_bacteria2" />
 
                 </LinearLayout>

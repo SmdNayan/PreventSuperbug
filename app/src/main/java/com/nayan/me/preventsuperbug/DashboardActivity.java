@@ -116,6 +116,8 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.mnLogin) {
             startActivity(new Intent(this, LoginActivity.class));
+        } else if (item.getItemId() == R.id.mnSignup) {
+            startActivity(new Intent(this, SignupActivity.class));
         } else if (item.getItemId() == R.id.mnLogout) {
             PBSBApplication.setToken(null);
             startActivity(getIntent());

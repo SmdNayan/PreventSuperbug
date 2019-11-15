@@ -29,7 +29,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
     private void bindData() {
         if (article != null) {
-            title.setText(article.getActive());
+            title.setText(article.getArticleTitle());
             description.setText(article.getLongDesc());
         }
     }
@@ -39,7 +39,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
     }
 
     private void init() {
-        title = findViewById(R.id.atitle);
+        title = findViewById(R.id.aTitle);
         description = findViewById(R.id.description);
     }
 
