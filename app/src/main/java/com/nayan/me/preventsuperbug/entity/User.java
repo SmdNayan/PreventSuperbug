@@ -3,6 +3,7 @@ package com.nayan.me.preventsuperbug.entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -83,9 +84,6 @@ public class User {
 
     @Expose(deserialize = false)
     private Set<Role> roles;
-
-    @SerializedName("complains")
-    private List<Complain> complains;
 
     public int getUserId() {
         return (int) userId;
@@ -186,4 +184,15 @@ public class User {
     public void setRoleId(int roleId) {
         this.roleId = roleId;
     }
+
+    public boolean isAdmin() {
+        for (Iterator<Role> it = roles.iterator(); it.hasNext(); ) {
+            Role role = it.next();
+            if (role.getRoleId() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

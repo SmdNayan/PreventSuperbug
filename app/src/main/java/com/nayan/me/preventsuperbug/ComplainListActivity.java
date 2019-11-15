@@ -12,9 +12,12 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.nayan.me.preventsuperbug.adapter.MedicineAdapter;
+import com.google.android.material.button.MaterialButton;
+import com.nayan.me.preventsuperbug.adapter.ArticleAdapter;
+import com.nayan.me.preventsuperbug.adapter.ComplainAdapter;
 import com.nayan.me.preventsuperbug.core.Config;
-import com.nayan.me.preventsuperbug.entity.Medicine;
+import com.nayan.me.preventsuperbug.entity.Article;
+import com.nayan.me.preventsuperbug.entity.Complain;
 import com.nayan.me.preventsuperbug.network.repos.implementes.HttpRepository;
 
 import java.util.Arrays;
@@ -24,32 +27,27 @@ import io.reactivex.annotations.Nullable;
 import io.reactivex.functions.Consumer;
 import retrofit2.HttpException;
 
-public class AntibioticActivity extends AppCompatActivity {
-    private RecyclerView rcvMedicine;
-
-    private ProgressDialog dialog;
+public class ComplainListActivity extends AppCompatActivity {
+    private RecyclerView rcvComplain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_antibiotic);
-        init();
-        bindViews();
+        setContentView(R.layout.activity_complain_list);
+        rcvComplain=findViewById(R.id.rcvComplain);
         actionbarSetting();
+        getComplains();
     }
 
-    private void init() {
-        rcvMedicine = findViewById(R.id.rcvMedicine);
-    }
-
-    private void bindViews() {
-        loadingProgressDialog(true, "Medicines", "Loading...");
+    private void getComplains() {
+        loadingProgressDialog(true, "Complains", "Loading...");
         HttpRepository getMedicines = new HttpRepository(Config.BASE_URL);
-        getMedicines.get("api/v1/medicines", Medicine[].class, new Consumer<Medicine[]>() {
+        getMedicines.get("api/v1/complains", Complain[].class, new Consumer<Complain[]>() {
             @Override
-            public void accept(Medicine[] medicines) throws Exception {
-                bindAdapter(Arrays.asList(medicines));
-                loadingProgressDialog(false, "Medicines", "Loading...");
+            public void accept(Complain[] complains) throws Exception {
+                if (complains != null)
+                    bindData(Arrays.asList(complains));
+                loadingProgressDialog(false, "Complain", "Loading...");
             }
         }, new Consumer<Throwable>() {
             @Override
@@ -58,25 +56,24 @@ public class AntibioticActivity extends AppCompatActivity {
                 if (exception.code() == 403) {
                     Toast.makeText(getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
                 }
-                loadingProgressDialog(false, "Medicines", "Loading...");
+                loadingProgressDialog(false, "Complain", "Loading...");
             }
         });
     }
 
-    private void bindAdapter(List<Medicine> medicines) {
-        MedicineAdapter adapter = new MedicineAdapter(this);
-        rcvMedicine.setAdapter(adapter);
-        rcvMedicine.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        rcvMedicine.setItemAnimator(new DefaultItemAnimator());
-        rcvMedicine.setHasFixedSize(true);
-        adapter.setMedicines(medicines);
+    private void bindData(List<Complain> complains) {
+        ComplainAdapter adapter = new ComplainAdapter(this);
+        rcvComplain.setAdapter(adapter);
+        rcvComplain.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        rcvComplain.setItemAnimator(new DefaultItemAnimator());
+        rcvComplain.setHasFixedSize(true);
+        adapter.setComplains(complains);
     }
 
     private void actionbarSetting() {
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        setSupportActionBar((Toolbar) findViewById(R.id.complainToolbar));
+        getSupportActionBar().setTitle("Complains");
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Antibiotic list");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -90,6 +87,8 @@ public class AntibioticActivity extends AppCompatActivity {
         return true;
     }
 
+    private ProgressDialog dialog;
+
     protected void loadingProgressDialog(final boolean visibility, @Nullable final String title, @Nullable final String msg) {
         if (dialog == null && !visibility)
             return;
@@ -98,11 +97,10 @@ public class AntibioticActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (dialog == null) {
-                    dialog = new ProgressDialog(AntibioticActivity.this);
+                    dialog = new ProgressDialog(ComplainListActivity.this);
                     dialog.setCancelable(false);
                     dialog.setProgressStyle(android.R.attr.progressBarStyleLarge);
                     // dialog.setIndeterminateDrawable(BaseActivity.this.getResources().getDrawable(R.drawable.dialog_cirlce));
-
                 }
                 if (visibility) {
 //                dialog.setTitle(title == null ? getString(R.string.jatri_sheba) : title);
@@ -115,5 +113,4 @@ public class AntibioticActivity extends AppCompatActivity {
             }
         });
     }
-
 }

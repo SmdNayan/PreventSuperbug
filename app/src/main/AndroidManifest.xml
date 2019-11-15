@@ -18,10 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ComplainDetailsActivity"></activity>
+        <activity android:name=".ComplainListActivity" />
         <activity
             android:name=".AddArticleActivity"
             android:label="@string/title_activity_add_article"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"

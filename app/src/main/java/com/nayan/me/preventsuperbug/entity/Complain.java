@@ -42,9 +42,10 @@ public class Complain {
     @SerializedName("active")
     private boolean active;
 
+//    @Expose
+//    @SerializedName("createAt")
+//    private Date createAt;
     @Expose
-    @SerializedName("createAt")
-    private Date createAt;
     @SerializedName("user")
     private User user;
 
@@ -121,13 +122,13 @@ public class Complain {
         this.active = active;
     }
 
-    public Date getCreateAt() {
-        return createAt;
-    }
-
-    public void setCreateAt(Date createAt) {
-        this.createAt = createAt;
-    }
+//    public Date getCreateAt() {
+//        return createAt;
+//    }
+//
+//    public void setCreateAt(Date createAt) {
+//        this.createAt = createAt;
+//    }
 
     public String requireFields() {
         StringBuilder sb = new StringBuilder();

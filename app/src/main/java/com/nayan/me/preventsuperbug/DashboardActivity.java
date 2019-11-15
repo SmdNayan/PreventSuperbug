@@ -13,6 +13,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 import com.nayan.me.preventsuperbug.core.PBSBApplication;
+import com.nayan.me.preventsuperbug.entity.Role;
+import com.nayan.me.preventsuperbug.entity.User;
+
+import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -58,7 +62,14 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
         complainCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, ComplainActivity.class));
+                if (PBSBApplication.isLoggedIn()) {
+                    User user = PBSBApplication.getUser();
+                    if (user != null && user.isAdmin()) {
+                        startActivity(new Intent(DashboardActivity.this, ComplainListActivity.class));
+                    } else {
+                        startActivity(new Intent(DashboardActivity.this, ComplainActivity.class));
+                    }
+                }
             }
         });
         articleCV.setOnClickListener(new View.OnClickListener() {
