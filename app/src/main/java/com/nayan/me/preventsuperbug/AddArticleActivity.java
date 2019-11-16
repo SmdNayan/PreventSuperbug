@@ -20,7 +20,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.loader.content.CursorLoader;
 
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -48,6 +50,7 @@ public class AddArticleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_article);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        actionbarSetting();
         init();
     }
 
@@ -149,4 +152,19 @@ public class AddArticleActivity extends AppCompatActivity {
         return result;
     }
 
+    private void actionbarSetting() {
+        getSupportActionBar().setTitle("ARTICLE");
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }
 }
