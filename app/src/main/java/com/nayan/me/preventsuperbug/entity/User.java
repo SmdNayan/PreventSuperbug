@@ -40,6 +40,14 @@ public class User {
     @Expose
     private String registrationNumber;
 
+    @SerializedName("contactNumber")
+    @Expose
+    private String contactNumber;
+
+    @SerializedName("address")
+    @Expose
+    private String address;
+
     public String getHospital() {
         return hospital;
     }
@@ -70,6 +78,22 @@ public class User {
 
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     @SerializedName("active")
@@ -189,6 +213,16 @@ public class User {
         for (Iterator<Role> it = roles.iterator(); it.hasNext(); ) {
             Role role = it.next();
             if (role.getRoleId() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isDoctor() {
+        for (Iterator<Role> it = roles.iterator(); it.hasNext(); ) {
+            Role role = it.next();
+            if (role.getRoleId() == 3) {
                 return true;
             }
         }

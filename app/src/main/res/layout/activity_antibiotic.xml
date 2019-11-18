@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Antibiotic">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -40,7 +41,8 @@
                 android:paddingTop="@dimen/status_bar_height"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Antibiotic" />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

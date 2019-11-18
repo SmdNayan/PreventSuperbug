@@ -53,7 +53,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, AntibioticDetailsActivity.class);
-                    intent.putExtra("medicine", new Gson().toJson(getItem(position)));
+                    intent.putExtra("medicine", getItem(position).getMedicineId());
                     context.startActivity(intent);
                 }
             });

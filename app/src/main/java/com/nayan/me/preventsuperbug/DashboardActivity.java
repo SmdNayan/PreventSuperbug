@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,9 +27,9 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
     MaterialCardView mentorshipCV;
     MaterialCardView dctrVerification;
     MaterialCardView superbugCV;
+    MaterialCardView superbugNewsCv;
     BottomNavigationView btmMenu;
     MaterialCardView userCV;
-    MaterialCardView aboutCV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
         dctrVerification = findViewById(R.id.dctr_v_cv);
         superbugCV = findViewById(R.id.superbug_cv);
         userCV = findViewById(R.id.user_profile);
-        aboutCV = findViewById(R.id.about_cv);
+        superbugNewsCv = findViewById(R.id.superbug_news_cv);
         btmMenu = findViewById(R.id.btmMenu);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         btmMenu.setOnNavigationItemSelectedListener(this);
@@ -90,10 +91,10 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
                 startActivity(new Intent(DashboardActivity.this, SuperbugActivity.class));
             }
         });
-        aboutCV.setOnClickListener(new View.OnClickListener() {
+        superbugNewsCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, AboutActivity.class));
+                startActivity(new Intent(DashboardActivity.this, SuperbugNewsActivity.class));
             }
         });
         dctrVerification.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +106,11 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
         userCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this, UserInfoActivity.class));
+                if (PBSBApplication.isLoggedIn())
+                    startActivity(new Intent(DashboardActivity.this, UserInfoActivity.class));
+                else {
+                    Toast.makeText(getApplicationContext(), "Please login first!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

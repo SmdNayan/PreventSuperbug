@@ -18,7 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ComplainDetailsActivity"></activity>
+        <activity android:name=".NewsDetailsActivity"></activity>
+        <activity android:name=".SuperbugNewsActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".ComplainDetailsActivity" />
         <activity android:name=".ComplainListActivity" />
         <activity
             android:name=".AddArticleActivity"

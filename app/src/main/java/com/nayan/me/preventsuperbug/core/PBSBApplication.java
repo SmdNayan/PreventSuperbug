@@ -31,6 +31,12 @@ public class PBSBApplication extends Application {
         return null;
     }
 
+    public static void setUser(User user) {
+        if (user != null) {
+            userToken.setUser(user);
+        }
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();

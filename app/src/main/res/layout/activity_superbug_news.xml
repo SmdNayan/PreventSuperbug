@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SuperbugActivity">
+    tools:context=".SuperbugNewsActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -18,11 +18,25 @@
         app:titleTextColor="@color/white" />
 
 
-    <WebView
-        android:id="@+id/webView"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="News About Superbug"
+        android:textColor="@color/md_green_500"
+        android:textStyle="bold" />
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvNews"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

@@ -316,7 +316,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/about_cv"
+                    android:id="@+id/superbug_news_cv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -336,7 +336,7 @@
                             android:scaleType="fitXY"
                             android:scaleX=".75"
                             android:scaleY=".75"
-                            android:src="@drawable/ic_about" />
+                            android:src="@drawable/superbug" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -345,7 +345,7 @@
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center_horizontal"
                             android:padding="5dp"
-                            android:text="About"
+                            android:text="Superbug News"
                             android:textAllCaps="true"
                             android:textColor="#000"
                             android:textSize="16sp"

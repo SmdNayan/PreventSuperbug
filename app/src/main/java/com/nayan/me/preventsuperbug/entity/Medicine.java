@@ -45,7 +45,7 @@ public class Medicine {
     @Expose
     private Date expiryDate;
 
-    @SerializedName("group")
+    @SerializedName("medicineGroup")
     @Expose
     private MedicineGroup medicineGroup;
 

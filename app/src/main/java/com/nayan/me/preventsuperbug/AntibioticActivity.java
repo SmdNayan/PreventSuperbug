@@ -74,7 +74,7 @@ public class AntibioticActivity extends AppCompatActivity {
 
     private void actionbarSetting() {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Antibiotic list");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
