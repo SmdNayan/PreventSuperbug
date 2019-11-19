@@ -110,5 +110,11 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (PBSBApplication.isLoggedIn()) {
+            startActivity(new Intent(this, DashboardActivity.class));
+        }
+    }
 }

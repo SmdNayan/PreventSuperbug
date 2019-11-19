@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NewsDetailsActivity"></activity>
+        <activity android:name=".AddMedicineActivity"></activity>
+        <activity android:name=".NewsDetailsActivity" />
         <activity android:name=".SuperbugNewsActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ComplainDetailsActivity" />
@@ -31,9 +32,7 @@
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.login.SignupActivity"
-            android:label="@string/title_activity_signup" />
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />

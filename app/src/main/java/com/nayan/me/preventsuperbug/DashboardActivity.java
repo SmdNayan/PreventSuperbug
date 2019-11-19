@@ -70,6 +70,8 @@ public class DashboardActivity extends AppCompatActivity implements BottomNaviga
                     } else {
                         startActivity(new Intent(DashboardActivity.this, ComplainActivity.class));
                     }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Please login first!", Toast.LENGTH_LONG).show();
                 }
             }
         });

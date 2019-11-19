@@ -7,13 +7,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nayan.me.preventsuperbug.adapter.MedicineAdapter;
 import com.nayan.me.preventsuperbug.core.Config;
+import com.nayan.me.preventsuperbug.core.PBSBApplication;
 import com.nayan.me.preventsuperbug.entity.Medicine;
 import com.nayan.me.preventsuperbug.network.repos.implementes.HttpRepository;
 
@@ -28,6 +32,7 @@ public class AntibioticActivity extends AppCompatActivity {
     private RecyclerView rcvMedicine;
 
     private ProgressDialog dialog;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,15 @@ public class AntibioticActivity extends AppCompatActivity {
 
     private void init() {
         rcvMedicine = findViewById(R.id.rcvMedicine);
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PBSBApplication.isLoggedIn() && PBSBApplication.getUser().isAdmin()) {
+                    startActivity(new Intent(AntibioticActivity.this, AddMedicineActivity.class));
+                }
+            }
+        });
     }
 
     private void bindViews() {

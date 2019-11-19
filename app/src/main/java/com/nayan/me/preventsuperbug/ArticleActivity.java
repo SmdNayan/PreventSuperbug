@@ -44,6 +44,10 @@ public class ArticleActivity extends AppCompatActivity {
         init();
         actionbarSetting();
         getArticles();
+        if (PBSBApplication.isLoggedIn() && PBSBApplication.getUser().isDoctor()) {
+            tvArticle.setVisibility(View.VISIBLE);
+            addArticle.setVisibility(View.VISIBLE);
+        }
     }
 
     private void getArticles() {
@@ -121,7 +125,7 @@ public class ArticleActivity extends AppCompatActivity {
                 HttpException exception = (HttpException) throwable;
                 if (exception.code() == 403) {
                     Toast.makeText(getApplicationContext(), "Please login to continue", Toast.LENGTH_LONG).show();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "You Have No Article!", Toast.LENGTH_LONG).show();
                 }
                 loadingProgressDialog(false, "Article", "Loading...");
